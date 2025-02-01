@@ -24,6 +24,10 @@ export class ShopSingleV1Component implements OnInit {
   submitted = false;
   styleDatas:any;
   populerDatas:any;
+  vendors = ['Vendor 1', 'Vendor 2', 'Vendor 3'];
+  selectedVendor = this.vendors[0];
+  vendorOfferPrice : any = {P:'20', S:'89'};
+  vendorPrice : any = {P:'23', S:'15'};
 
   constructor(private modalService: NgbModal, private formBuilder: UntypedFormBuilder) { }
 
@@ -47,6 +51,25 @@ export class ShopSingleV1Component implements OnInit {
    */
    sizetModal(sizeChartModal: any) {
     this.modalService.open(sizeChartModal, { size: 'md', centered: true });
+  }
+
+  selectVendor(vendor: string) {
+    this.selectedVendor = vendor;
+    switch(vendor) {
+      case 'Vendor 1':
+        this.vendorOfferPrice = {P:'20', S:'89'};
+        this.vendorPrice = {P:'23', S:'15'};
+        break;
+      case 'Vendor 2':
+        this.vendorOfferPrice = {P:'18', S:'36'};
+        this.vendorPrice = {P:'20', S:'96'};
+        break;
+      case 'Vendor 3':
+        this.vendorOfferPrice = {P:'22', S:'54'};
+        this.vendorPrice = {P:'25', S:'01'};
+        break;
+      
+    }
   }
 
 

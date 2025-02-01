@@ -4,3 +4,47 @@
     flex-wrap: wrap;
     flex-direction: column;
 }
+
+.text-white {
+    color: #ffffff !important;
+}
+
+/* Custom outline button */
+.btn-outline-theme {
+    color: #fcc311 !important;
+    border: 1px solid #fcc311 !important;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .theme-color-1 {
+    background-color: #fcc311 !important;
+    color: white !important;
+}
+
+.text-theme-1 {
+    color: #fcc311 !important;
+}
+
+.text-theme-2 {
+    color: #113f56 !important;
+}
+
+.theme-color-2 {
+    background-color: #113f56 !important;
+    color: white !important;
+}
+
+  /* Hover effect */
+  .btn-outline-theme:hover {
+    background-color: #113f56 !important;
+    color: white !important;
+  }
+  
+  /* Selected button */
+  .btn-outline-theme.active {
+    background-color: #113f56 !important;
+    color: white !important;
+    border-color: #113f56 !important;
+  }
+  

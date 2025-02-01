@@ -63,12 +63,21 @@
               <button class="btn-wishlist me-0 me-lg-n3" type="button" data-bs-toggle="tooltip" placement="top"
                 ngbTooltip="Add to wishlist"><i class="ci-heart"></i></button>
             </div>
-            <div class="mb-3"><span class="h3 fw-normal text-accent me-1">$18.<small>99</small></span>
-              <del class="text-muted fs-lg me-3">$25.<small>00</small></del><span
-                class="badge bg-danger badge-shadow align-middle mt-n2">Sale</span>
+            <div class="mb-3"><span class="h3 fw-normal text-accent me-1">${{vendorOfferPrice.P}}.<small>{{vendorOfferPrice.S}}</small></span>
+              <del class="text-muted fs-lg me-3">${{vendorPrice.P}}.<small>{{vendorPrice.S}}</small></del><span
+                class="badge theme-color-2 badge-shadow align-middle mt-n2">Sale</span>
             </div>
-            <div class="fs-sm mb-4"><span class="text-heading fw-medium me-1">Vendor:</span><span 
-              id="colorOption">Vendor 1</span></div>
+            <div class="fs-sm mb-4"><span class="text-heading fw-medium me-1">Vendor:</span>
+              <div class="btn-group d-flex" role="group" aria-label="Vendor Toggle">
+                <button 
+                  *ngFor="let vendor of vendors" 
+                  class="btn btn-outline-theme "
+                  [ngClass]="{'active': selectedVendor === vendor}"
+                  (click)="selectVendor(vendor)">
+                  {{ vendor }}
+                </button>
+              </div>
+            </div>
               <div class="fs-sm mb-4"><span class="text-heading fw-medium me-1">Color:</span><span class="text-muted"
                 id="colorOption">Red/Dark blue/White</span></div>
           <div class="position-relative me-n4 mb-3">
@@ -120,7 +129,7 @@
                   <option value="4">4</option>
                   <option value="5">5</option>
                 </select>
-                <button class="btn btn-primary btn-shadow d-block w-100" type="submit"><i
+                <button class="btn theme-color-2 btn-shadow d-block w-100" type="submit"><i
                     class="ci-cart fs-lg me-2"></i>Add to Cart</button>
               </div>
             </form>
@@ -529,7 +538,7 @@
               <label class="form-label" for="review-cons">Cons</label>
               <textarea class="form-control" rows="2" placeholder="Separated by commas" id="review-cons"></textarea>
             </div>
-            <button class="btn btn-primary btn-shadow d-block w-100" type="submit">Submit a Review</button>
+            <button class="btn  theme-color-2 btn-shadow d-block w-100" type="submit">Submit a Review</button>
           </form>
         </div>
       </div>
